@@ -2,8 +2,9 @@ class Api::V1::ToDosController < ApplicationController
   before_action :find_to_do, only: [:update, :destroy]
 
   def index
-    user = User.find(params[:user_id])
-    to_dos = user.to_dos
+    # user = User.find(params[:user_id])
+    # to_dos = user.to_dos
+    to_dos = ToDo.all
     render json: to_dos
   end
 
