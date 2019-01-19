@@ -2,11 +2,15 @@ class Api::V1::UsersController < ApplicationController
   before_action :find_user, only: [:login, :update]
 
   def login
-    @user
   end
 
   def register
-    User.create(user_params)
+    user = User.create(user_params)
+    if user.valid?
+      render json: { user: user }, status: :created
+    else
+      render json: { error: 'failed to create user' }, status: :not_acceptable
+    end
   end
 
   # def update
@@ -21,7 +25,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:first_name, :last_name, :email, :password_digest)
+    params.permit(:first_name, :last_name, :email, :password)
   end
 
   def find_user
