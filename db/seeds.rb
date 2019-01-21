@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+ToDo.destroy_all
+
+u1 = User.create(first_name: "Paolo", last_name: "Ventura", email: "pv@gmail.com", password: "password")
+u2 = User.create(first_name: "Paul", last_name: "Clark", email: "pc@gmail.com", password: "password")
+
+
+t1 = ToDo.create(header: "first", description: "first")
+t2 = ToDo.create(header: "second", description: "second")
