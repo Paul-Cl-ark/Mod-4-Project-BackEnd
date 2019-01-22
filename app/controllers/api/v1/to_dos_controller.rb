@@ -1,14 +1,13 @@
 class Api::V1::ToDosController < ApplicationController
 
   def index
-    # user = User.find(params[:user_id])
-    # to_dos = user.to_dos
+    # to_dos = current_user.to_dos
     to_dos = ToDo.all
     render json: to_dos
   end
 
   def create
-    to_do = ToDo.create(header: params[:header], description: params[:description])
+    to_do = ToDo.create(header: params[:header], description: params[:description], user_id: params[current_user.id])
     if to_do.save
       render json: to_do
     else
@@ -18,7 +17,7 @@ class Api::V1::ToDosController < ApplicationController
 
   def update
     to_do = ToDo.find(params[:id])
-    to_do.update(header: params[:header], description: params[:description])
+    to_do.update(header: params[:header], description: params[:description], user_id: params[current_user.id])
     if to_do.save
       render json: to_do, status: :accepted
     else
