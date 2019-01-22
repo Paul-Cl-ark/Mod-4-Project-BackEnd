@@ -12,5 +12,7 @@ u1 = User.create(first_name: "Paolo", last_name: "Ventura", email: "pv@gmail.com
 u2 = User.create(first_name: "Paul", last_name: "Clark", email: "pc@gmail.com", password: "password")
 
 
-t1 = ToDo.create(header: "first", description: "first")
-t2 = ToDo.create(header: "second", description: "second")
+t1 = ToDo.create(header: "first", description: "first", user: u1)
+t2 = ToDo.create(header: "second", description: "second", user: u1)
+t13 = ToDo.create(header: "first", description: "first", user: u2)
+t4 = ToDo.create(header: "second", description: "second", user: u2)
