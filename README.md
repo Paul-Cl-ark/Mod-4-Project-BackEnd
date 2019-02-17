@@ -1,24 +1,7 @@
-# README
+Written by Paolo Ventura & Paul Clark
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project uses React, on the Front End, and Ruby on Rails on the Back end. Users can create an account and login and manage their to-dos.
 
-Things you may want to cover:
+The project uses encoded JWTs for login and verification. It includes an experimental implementation of OAuth login with Google via Firebase. It includes Routes and full CRUD capability.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Flatiron School Mod-4 Project
